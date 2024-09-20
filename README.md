@@ -15,7 +15,7 @@ Para executar o script de backup, você precisará do `rsync` instalado no seu s
 
 O script utiliza um arquivo JSON chamado `config.json` para armazenar informações sobre o caminho do `rsync`. O arquivo deve ter o seguinte formato:
 
-```json
+`json`
 {
     "rsync_path": "C:\\caminho\\para\\rsync.exe"
 }
