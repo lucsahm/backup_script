@@ -6,6 +6,10 @@ from datetime import datetime
 DIR_ORIG = '/cygdrive/i/'
 DIR_DEST = '/cygdrive/e/'
 
+# Função para garantir que o caminho termine com "/"
+def garantir_barra_final(diretorio):
+    return diretorio if diretorio.endswith('/') else diretorio + '/'
+
 # Função para executar o rsync
 def faz_backup():
     log_message(f"-------[START] [BACKUP] [{datetime.now()}]-------")
@@ -36,6 +40,9 @@ def log_message(message):
 def confirma_dir():
     global DIR_ORIG, DIR_DEST
     while True:
+        DIR_ORIG = garantir_barra_final(DIR_ORIG)
+        DIR_DEST = garantir_barra_final(DIR_DEST)
+
         print(f"\nOrigem: {DIR_ORIG}")
         print(f"Destino: {DIR_DEST}\n")
         option = input("Está correto? (s para confirmar, i para inverter, a para alterar ou n para sair): ")
@@ -53,6 +60,16 @@ def confirma_dir():
         else:
             print("Opção inválida! Tente novamente.")
 
+# Função para mostrar o conteúdo do README.md
+def mostrar_ajuda():
+    try:
+        with open(README_FILE, 'r') as readme:
+            conteudo = readme.read()
+            print("\nConteúdo do README.md:\n")
+            print(conteudo)
+    except FileNotFoundError:
+        print("Erro: README.md não encontrado.")
+
 # Menu principal
 def menu():
     while True:
@@ -67,14 +84,15 @@ def menu():
             confirma_dir()
             print("Iniciando backup...")
             faz_backup()
-            break
+            # Retornar ao menu principal
         elif opcao == "2":
             confirma_dir()
             print("Sincronizando...")
             sincroniza()
-            break
+            # Retornar ao menu principal
         elif opcao == "3":
             print("Nome: Lucas Sahm\nEmail: lucassahm@gmail.com\nData: 01/10/2024\nVersão: 1.0.0")
+            mostrar_ajuda()  # Chama a função para mostrar o README.md
         elif opcao == "4":
             break
         else:
