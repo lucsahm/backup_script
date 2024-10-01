@@ -3,6 +3,8 @@
 ## Descrição
 
 Este script realiza backups de diretórios que são selecionados pelo usuário utilizando o `rsync` do Cygwin. Ele permite selecionar diretórios de origem e destino, além de oferecer opções para sincronização.
+O arquivo "backupRodar_gui.py" utiliza a interface gráfica.
+O arquivo "backupRodar_cli.py" utiliza apenas a interface "linha de comando".
 
 ## Requisitos
 
