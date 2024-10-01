@@ -5,7 +5,6 @@ from datetime import datetime
 # Diretórios iniciais
 DIR_ORIG = '/cygdrive/i/'
 DIR_DEST = '/cygdrive/e/'
-LOGFILE = os.path.join(DIR_ORIG, 'backup.log')
 
 # Função para executar o rsync
 def faz_backup():
@@ -29,9 +28,9 @@ def sincroniza():
 
 # Função para logar mensagens
 def log_message(message):
-    with open(LOGFILE, 'a') as log_file:
+    log_file_path = os.path.join(entry_origem.get(), 'backup.log')
+    with open(log_file_path, 'a') as log_file:
         log_file.write(f"{message}\n")
-    print(message)
 
 # Função para confirmar os diretórios e permitir inversão
 def confirma_dir():
