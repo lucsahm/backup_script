@@ -39,12 +39,16 @@ def confirma_dir():
     while True:
         print(f"\nOrigem: {DIR_ORIG}")
         print(f"Destino: {DIR_DEST}\n")
-        option = input("Está correto? (s para confirmar, i para inverter, n para sair): ")
+        option = input("Está correto? (s para confirmar, i para inverter, a para alterar ou n para sair): ")
         if option == 's':
             break
         elif option == 'i':
             DIR_ORIG, DIR_DEST = DIR_DEST, DIR_ORIG
             print("Diretórios invertidos!")
+        elif option == 'a':
+            DIR_ORIG = input("Digite o novo diretório de origem: ")
+            DIR_DEST = input("Digite o novo diretório de destino: ")
+            print("Diretórios atualizados!")
         elif option == 'n':
             exit(1)
         else:
@@ -56,7 +60,8 @@ def menu():
         print("\nEscolha uma opção:")
         print("1 - Backup")
         print("2 - Sincronizar")
-        print("3 - Sair\n")
+        print("3 - Ajuda")
+        print("4 - Sair\n")
         opcao = input("Digite sua escolha: ")
 
         if opcao == "1":
@@ -70,6 +75,8 @@ def menu():
             sincroniza()
             break
         elif opcao == "3":
+            print("Nome: Lucas Sahm\nEmail: lucassahm@gmail.com\nData: 01/10/2024\nVersão: 1.0.0")
+        elif opcao == "4":
             break
         else:
             print("Opção inválida!")
