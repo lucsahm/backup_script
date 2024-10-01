@@ -5,6 +5,7 @@ from datetime import datetime
 # Diretórios iniciais
 DIR_ORIG = '/cygdrive/i/'
 DIR_DEST = '/cygdrive/e/'
+README_FILE = 'README.md'  # Defina o nome do arquivo README.md
 
 # Função para garantir que o caminho termine com "/"
 def garantir_barra_final(diretorio):
