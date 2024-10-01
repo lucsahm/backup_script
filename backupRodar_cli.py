@@ -28,7 +28,7 @@ def sincroniza():
 
 # Função para logar mensagens
 def log_message(message):
-    log_file_path = os.path.join(entry_origem.get(), 'backup.log')
+    log_file_path = os.path.join(DIR_ORIG, 'backup.log')
     with open(log_file_path, 'a') as log_file:
         log_file.write(f"{message}\n")
 
