@@ -8,6 +8,9 @@ O arquivo "backupRodar_gui.py" utiliza a interface gráfica.
 
 O arquivo "backupRodar_cli.py" utiliza apenas a interface "linha de comando".
 
+## Tela
+![tela](tela1.png)
+
 ## Requisitos
 
 Para executar o script de backup, você precisará do `rsync` instalado no seu sistema. O `rsync` é uma ferramenta de sincronização de arquivos e diretórios.
